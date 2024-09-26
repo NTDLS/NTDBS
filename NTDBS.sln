@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestApp", "TestApp\NTDB Test.vcxproj", "{081E878A-D182-4008-96DB-61EEAE3AA1DB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NTDBS", "NTDBS\NTDBS.vcxproj", "{731BEE08-24A6-4F92-A518-1F81E610E832}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{081E878A-D182-4008-96DB-61EEAE3AA1DB}.Debug|x86.ActiveCfg = Debug|Win32
+		{081E878A-D182-4008-96DB-61EEAE3AA1DB}.Debug|x86.Build.0 = Debug|Win32
+		{081E878A-D182-4008-96DB-61EEAE3AA1DB}.Release|x86.ActiveCfg = Release|Win32
+		{081E878A-D182-4008-96DB-61EEAE3AA1DB}.Release|x86.Build.0 = Release|Win32
+		{731BEE08-24A6-4F92-A518-1F81E610E832}.Debug|x86.ActiveCfg = Debug|Win32
+		{731BEE08-24A6-4F92-A518-1F81E610E832}.Debug|x86.Build.0 = Debug|Win32
+		{731BEE08-24A6-4F92-A518-1F81E610E832}.Release|x86.ActiveCfg = Release|Win32
+		{731BEE08-24A6-4F92-A518-1F81E610E832}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01D3F94B-40E6-4A23-B268-D5C61272CA03}
+	EndGlobalSection
+EndGlobal

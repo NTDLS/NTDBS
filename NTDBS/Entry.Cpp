@@ -1,0 +1,40 @@
+#ifndef _Entry_CPP
+#define _Entry_CPP
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <Windows.H>
+#include <Stdio.H>
+#include <Stdlib.H>
+
+#include "Resources/Resource.H"
+
+#include "Entry.H"
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+BOOL APIENTRY DllMain(HANDLE module, DWORD reason, LPVOID reserved)
+{
+	if (reason == DLL_PROCESS_ATTACH)
+	{
+		return TRUE;
+	}
+	else if (reason == DLL_PROCESS_DETACH)
+	{
+		return TRUE;
+	}
+	else if (reason == DLL_THREAD_ATTACH)
+	{
+		return TRUE;
+	}
+	else if (reason == DLL_THREAD_DETACH)
+	{
+		return TRUE;
+	}
+
+	return TRUE;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#endif
+

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{2e6da703-1bd8-4b39-a2a6-316cf4498d32}</UniqueIdentifier>
+      <Extensions>h;hpp</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4e7de206-51f8-4a23-89af-d488dd39beb5}</UniqueIdentifier>
+      <Extensions>c;cpp</Extensions>
+    </Filter>
+    <Filter Include="External">
+      <UniqueIdentifier>{d2c6ab04-f89a-486c-a75b-5677d2f25a62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared">
+      <UniqueIdentifier>{51974d0f-81f1-41a1-a7b1-cb5924eda6ef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileIO\ReadDelimited.H">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FileIO\WriteDelimited.H">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\NTDBS.H">
+      <Filter>Shared</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TestApp.Cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
