@@ -30,16 +30,16 @@
 #define DBS_VALUE_NOT_FOUND            -1007
 #define DBS_FATAL_OUT_OF_MEMORY        -1008
 #define DBS_NON_FATAL_OUT_OF_MEMORY    -1009
-#define DBS_COLUMB_NOT_FOUND           -1010
+#define DBS_COLUMN_NOT_FOUND           -1010
 #define DBS_ROW_NOT_FOUND              -1011
 #define DBS_OVER_MAX_ROW_LIMIT         -1012
-#define DBS_OVER_MAX_COLUMB_LIMIT      -1013
+#define DBS_OVER_MAX_COLUMN_LIMIT      -1013
 
 #define MAXDATASIZE      10240
-#define MAXROWSPERCOLUMB 100000
-#define MAXCOLUMBS       100000
-#define MINROWSPERCOLUMB 1
-#define MINCOLUMBS       1
+#define MAXROWSPERCOLUMN 100000
+#define MAXCOLUMNS       100000
+#define MINROWSPERCOLUMN 1
+#define MINCOLUMNS       1
 
 struct _DBSColumn {
 	char** Row;     // Row Data              | Row[Row]      = "Row Data";

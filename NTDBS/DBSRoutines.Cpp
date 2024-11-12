@@ -20,10 +20,10 @@ DllExport short SizeOfType(int Type)
 
 DllExport int InitializeDBS(struct _DatabaseSystem* dbs, int columns, int rowsPerColumn)
 {
-	if ((columns > MAXCOLUMBS) || (columns < MINCOLUMBS))
+	if ((columns > MAXCOLUMNS) || (columns < MINCOLUMNS))
 		return DBS_INITIALIZER_OUT_OF_BOUNDS;
 
-	if ((rowsPerColumn > MAXROWSPERCOLUMB) || (rowsPerColumn < MINROWSPERCOLUMB))
+	if ((rowsPerColumn > MAXROWSPERCOLUMN) || (rowsPerColumn < MINROWSPERCOLUMN))
 		return DBS_INITIALIZER_OUT_OF_BOUNDS;
 
 	dbs->MaxRowsPerColumn = rowsPerColumn;
@@ -81,7 +81,7 @@ DllExport int FreeDBS(struct _DatabaseSystem* dbs)
 DllExport int AddColumn(struct _DatabaseSystem* dbs, char* columnName, int nameLength)
 {
 	if (dbs->Columns >= dbs->MaxColumns)
-		return DBS_OVER_MAX_COLUMB_LIMIT;
+		return DBS_OVER_MAX_COLUMN_LIMIT;
 
 	dbs->Column[dbs->Columns].Name = (char*)calloc(nameLength + 1, 1);
 	if (dbs->Column[dbs->Columns].Name == NULL)
@@ -120,7 +120,7 @@ DllExport int ColumnNameToColumnPosition(struct _DatabaseSystem* dbs, char* colu
 		localLoop++;
 	}
 
-	return DBS_COLUMB_NOT_FOUND;
+	return DBS_COLUMN_NOT_FOUND;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -149,10 +149,10 @@ DllExport int GetMostRows(struct _DatabaseSystem* dbs)
 DllExport int DeleteRowByColumnPosition(struct _DatabaseSystem* dbs, int columnPos, int row)
 {
 	if (columnPos >= dbs->MaxColumns)
-		return DBS_OVER_MAX_COLUMB_LIMIT;
+		return DBS_OVER_MAX_COLUMN_LIMIT;
 
 	if (columnPos >= dbs->Columns)
-		return DBS_COLUMB_NOT_FOUND;
+		return DBS_COLUMN_NOT_FOUND;
 
 	if (row >= dbs->MaxRowsPerColumn)
 		return DBS_OVER_MAX_ROW_LIMIT;
@@ -203,7 +203,7 @@ DllExport int AddEntryByColumnPosition(struct _DatabaseSystem* dbs, int columnPo
 		return DBS_OVER_MAX_ROW_LIMIT;
 
 	if (columnPos >= dbs->MaxColumns)
-		return DBS_OVER_MAX_COLUMB_LIMIT;
+		return DBS_OVER_MAX_COLUMN_LIMIT;
 
 	dbs->Column[columnPos].Row[rows] = (char*)calloc(dataLength + 1, 1);
 	if (dbs->Column[columnPos].Row[rows] == NULL)
@@ -225,7 +225,7 @@ DllExport int AddEntryByColumnName(struct _DatabaseSystem* dbs, char* columnName
 	int columnPos = 0;
 
 	if ((columnPos = ColumnNameToColumnPosition(dbs, columnName)) < 0)
-		return DBS_COLUMB_NOT_FOUND;
+		return DBS_COLUMN_NOT_FOUND;
 
 	return AddEntryByColumnPosition(dbs, columnPos, rowData, dataLength);
 }
@@ -237,7 +237,7 @@ DllExport int SearchRowDataByColumnPosition(struct _DatabaseSystem* dbs, int col
 	int localLoop = 0;
 
 	if (column > dbs->Columns)
-		return DBS_COLUMB_NOT_FOUND;
+		return DBS_COLUMN_NOT_FOUND;
 
 	while (localLoop < dbs->Column[column].Rows)
 	{
@@ -257,7 +257,7 @@ DllExport int SearchRowDataByColumnName(struct _DatabaseSystem* dbs, char* colum
 	int columnPos = 0;
 
 	if ((columnPos = ColumnNameToColumnPosition(dbs, columnName)) < 0)
-		return DBS_COLUMB_NOT_FOUND;
+		return DBS_COLUMN_NOT_FOUND;
 
 	return SearchRowDataByColumnPosition(dbs, columnPos, search);
 }
@@ -267,7 +267,7 @@ DllExport int SearchRowDataByColumnName(struct _DatabaseSystem* dbs, char* colum
 DllExport int RetrieveDataLengthByColumnPosition(struct _DatabaseSystem* dbs, int columnPos, int row)
 {
 	if (columnPos > dbs->Columns)
-		return DBS_COLUMB_NOT_FOUND;
+		return DBS_COLUMN_NOT_FOUND;
 
 	if (row >= dbs->Column[columnPos].Rows)
 		return DBS_ROW_NOT_FOUND;
@@ -282,7 +282,7 @@ DllExport int RetrieveDataLengthByColumnName(struct _DatabaseSystem* dbs, char* 
 	int columnPos = 0;
 
 	if ((columnPos = ColumnNameToColumnPosition(dbs, columnName)) < 0)
-		return DBS_COLUMB_NOT_FOUND;
+		return DBS_COLUMN_NOT_FOUND;
 
 	return RetrieveDataLengthByColumnPosition(dbs, columnPos, row);
 }
@@ -292,7 +292,7 @@ DllExport int RetrieveDataLengthByColumnName(struct _DatabaseSystem* dbs, char* 
 DllExport int RetrieveDataByColumnPosition(struct _DatabaseSystem* dbs, int columnPos, int row, char* returnValue)
 {
 	if (columnPos > dbs->Columns)
-		return DBS_COLUMB_NOT_FOUND;
+		return DBS_COLUMN_NOT_FOUND;
 
 	if (row >= dbs->Column[columnPos].Rows)
 		return DBS_ROW_NOT_FOUND;
@@ -311,7 +311,7 @@ DllExport int RetrieveDataByColumnName(struct _DatabaseSystem* dbs, char* column
 	int columnPos = 0;
 
 	if ((columnPos = ColumnNameToColumnPosition(dbs, columnName)) < 0)
-		return DBS_COLUMB_NOT_FOUND;
+		return DBS_COLUMN_NOT_FOUND;
 
 	return RetrieveDataByColumnPosition(dbs, columnPos, row, returnValue);
 }

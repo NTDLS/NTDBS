@@ -5,10 +5,10 @@
 #define DllImport         extern "C" __declspec( dllimport )
 
 #define MAXDATASIZE      1048576
-#define MAXROWSPERCOLUMB 1000000
-#define MAXCOLUMBS       1000000
-#define MINROWSPERCOLUMB 1
-#define MINCOLUMBS       1
+#define MAXROWSPERCOLUMN 1000000
+#define MAXCOLUMNS       1000000
+#define MINROWSPERCOLUMN 1
+#define MINCOLUMNS       1
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
