@@ -104,11 +104,11 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <OutputFile>.\Debug/NTDBS.dll</OutputFile>
+      <OutputFile>.\Debug\NTDBS.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\Debug/NTDBS.pdb</ProgramDatabaseFile>
-      <ImportLibrary>.\Debug/NTDBS.lib</ImportLibrary>
+      <ImportLibrary>.\Debug\NTDBS.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <Midl>

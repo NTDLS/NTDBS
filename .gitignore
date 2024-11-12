@@ -4,3 +4,5 @@
 NTDBS/Debug/
 
 TestApp/Debug/
+
+*.user
